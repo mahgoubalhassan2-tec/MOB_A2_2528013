@@ -36,7 +36,8 @@
           "photosPermission": "The app accesses your photos to let you choose a custom profile picture.",
           "cameraPermission": "The app accesses your camera to let you take a new profile picture."
         }
-      ]
+      ],
+      "expo-asset"
     ],
     "extra": {
       "eas": {
