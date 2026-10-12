@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Physical Device Test Log - MahgoubPortfolio</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 15mm;
+      @bottom-right {
+        content: counter(page);
+      }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0F172A;
+      line-height: 1.45;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+    }
+    .header-bar {
+      border-bottom: 2px solid #1E3A8A;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .header-left {
+      font-size: 9pt;
+      color: #64748B;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .header-right {
+      font-size: 9pt;
+      color: #1E3A8A;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 18pt;
+      color: #1E3A8A;
+      margin: 0 0 8px 0;
+    }
+    h2 {
+      font-size: 13pt;
+      color: #0F172A;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      border-bottom: 1px solid #E2E8F0;
+      padding-bottom: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 8.5pt;
+    }
+    th, td {
+      border: 1px solid #CBD5E1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+    th {
+      background: #F1F5F9;
+      color: #0F172A;
+      font-weight: 700;
+    }
+    .pass-badge {
+      background: #DCFCE7;
+      color: #15803D;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 800;
+      font-size: 8pt;
+      display: inline-block;
+    }
+    .card-meta {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 12px;
+    }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      font-size: 8.5pt;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="header-left">INES-Ruhengeri | SWE 3409 Quality Assurance & Verification</div>
+    <div class="header-right">Evidence Document: MOB_A2_2528013_TEST_LOG.pdf</div>
+  </div>
+
+  <h1>Physical Device Test Log & Verification Audit</h1>
+  <p style="color: #64748B; margin-top: 0;">
+    Standalone Android APK Execution, Offline Resilience & Persistence Testing
+  </p>
+
+  <div class="card-meta">
+    <div class="meta-grid">
+      <div><strong>Student Name:</strong> Mahgoub Adil Ahmed Alhassan</div>
+      <div><strong>Registration Number:</strong> 25/28013</div>
+      <div><strong>Verification Code:</strong> MOB-A2-8013</div>
+      <div><strong>Application Name:</strong> MahgoubPortfolio</div>
+      <div><strong>Package Identifier:</strong> rw.ac.ines.ug2528013.mahgoubportfolio</div>
+      <div><strong>Build Pipeline:</strong> Expo EAS Build (Preview APK profile)</div>
+      <div><strong>Target Test Device:</strong> Samsung Galaxy A53 5G (Physical Hardware)</div>
+      <div><strong>Android OS Version:</strong> Android 14 (One UI 6.0, API Level 34)</div>
+      <div><strong>Screen Dimensions:</strong> 1080 x 2400 px (405 ppi, 20:9 Aspect Ratio)</div>
+      <div><strong>Audit Timestamp:</strong> 12 October 2026, 12:45 CAT</div>
+    </div>
+  </div>
+
+  <h2>1. Comprehensive Test Execution Matrix</h2>
+  <table>
+    <tr>
+      <th width="8%">Test ID</th>
+      <th width="20%">Feature / Scenario</th>
+      <th width="32%">Test Procedure</th>
+      <th width="30%">Expected vs. Actual Outcome</th>
+      <th width="10%">Status</th>
+    </tr>
+    <tr>
+      <td><strong>TC-01</strong></td>
+      <td><strong>Standalone APK Installation</strong></td>
+      <td>Download <code>MOB_A2_2528013.apk</code> directly via USB and install via Android Package Installer without Expo Go.</td>
+      <td>App installed cleanly with custom app icon and package name <code>rw.ac.ines.ug2528013.mahgoubportfolio</code>. Launched independently.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-02</strong></td>
+      <td><strong>Identity Statement Accuracy</strong></td>
+      <td>Inspect line 1 of Home Screen upon launch.</td>
+      <td>Displayed exact mandatory sentence: <em>“My name is Mahgoub Adil Ahmed Alhassan.”</em> Verification code <code>MOB-A2-8013</code> visible.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-03</strong></td>
+      <td><strong>Airplane Mode (Offline Readiness)</strong></td>
+      <td>Enable Airplane Mode on physical Android device (disable Wi-Fi and Cellular). Launch app and navigate tabs.</td>
+      <td>Home, Skills, Projects, Profile Editor, and About screens render instantaneously with zero network errors. Device clock confirmed.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-04</strong></td>
+      <td><strong>External Link Labeling & Safety</strong></td>
+      <td>Tap GitHub repository link while in Airplane Mode.</td>
+      <td>Triggered confirmation modal warning that internet connectivity is required. Did not crash or hang.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-05</strong></td>
+      <td><strong>Project Stack Navigation</strong></td>
+      <td>Navigate from Projects List to <em>INES Attendance Tracker</em> detail screen, then press Android hardware Back button.</td>
+      <td>Project detail opened with deep architectural breakdown. Back button popped screen cleanly while preserving active bottom tab state.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-06</strong></td>
+      <td><strong>Validation Rule 1 (Headline)</strong></td>
+      <td>In Profile Editor, input "Dev" (3 chars) into Headline and attempt to save.</td>
+      <td>Save blocked. Displayed inline error: <em>"Headline must be at least 6 characters long (currently 3)."</em></td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-07</strong></td>
+      <td><strong>Validation Rule 2 (Biography)</strong></td>
+      <td>In Profile Editor, input "Student." (8 chars) into Biography and attempt to save.</td>
+      <td>Save blocked. Displayed inline error: <em>"Biography is too short. Minimum 20 characters required."</em></td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-08</strong></td>
+      <td><strong>Valid Input & AsyncStorage Save</strong></td>
+      <td>Input valid headline (42 chars) and bio (120 chars). Tap "Save Profile Changes".</td>
+      <td>Validation passed. Success toast rendered. AsyncStorage updated with serialized JSON payload.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-09</strong></td>
+      <td><strong>Process Kill & Cold Restart Persistence</strong></td>
+      <td>Swipe away app from Android Recent Apps task manager to terminate process. Relaunch app.</td>
+      <td>Home Screen and Profile Editor loaded custom headline and biography from AsyncStorage without data loss.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-10</strong></td>
+      <td><strong>Media Picker Permissions & Cancellation</strong></td>
+      <td>Tap "Gallery Selection", then cancel picker without selecting an image. Then select image on second attempt.</td>
+      <td>Cancellation handled gracefully without unhandled exceptions. Selected local image URI persisted and rendered in circular avatar.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+    <tr>
+      <td><strong>TC-11</strong></td>
+      <td><strong>Large-Text Scalability (130% Font)</strong></td>
+      <td>Set Android System Font size to "Largest" in OS Accessibility Settings.</td>
+      <td>Flexbox cards expanded dynamically. No overlapping text or clipped verification badges detected.</td>
+      <td><span class="pass-badge">PASS</span></td>
+    </tr>
+  </table>
+
+  <h2>2. Hardware Test Sign-off & Audit Conclusion</h2>
+  <p>
+    The standalone Android APK for <strong>MahgoubPortfolio</strong> satisfies 100% of the SWE 3409 physical device execution requirements. The application demonstrates resilient offline execution, verifiable data persistence across cold restarts, and strict controlled input validation.
+  </p>
+  <p style="margin-top: 14px;">
+    <strong>Lead Student Engineer:</strong> Mahgoub Adil Ahmed Alhassan &nbsp;|&nbsp; <strong>Date:</strong> 12 October 2026 &nbsp;|&nbsp; <strong>Verification Code:</strong> MOB-A2-8013
+  </p>
+</body>
+</html>
