@@ -2,6 +2,7 @@
   "expo": {
     "name": "MahgoubPortfolio",
     "slug": "mahgoub-portfolio",
+    "owner": "mahgubahmeds-team",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,9 +23,10 @@
       },
       "package": "rw.ac.ines.ug2528013.mahgoubportfolio",
       "permissions": [
-        "CAMERA",
-        "READ_EXTERNAL_STORAGE",
-        "WRITE_EXTERNAL_STORAGE"
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
       ]
     },
     "plugins": [
@@ -35,6 +37,11 @@
           "cameraPermission": "The app accesses your camera to let you take a new profile picture."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "920c3c92-8c86-4fa6-9dc7-33b9367cdcca"
+      }
+    }
   }
 }
